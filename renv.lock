@@ -1,0 +1,46 @@
+{
+  "renv": {
+    "Version": "0.6.0-92"
+  },
+  "R": {
+    "Version": "3.6.1",
+    "Repositories": [
+      {
+        "Name": "CRAN",
+        "URL": "https://cran.rstudio.com"
+      }
+    ]
+  },
+  "Packages": {
+    "backports": {
+      "Package": "backports",
+      "Version": "1.1.4",
+      "Source": "CRAN",
+      "RemoteType": "standard",
+      "RemoteRef": "backports",
+      "RemoteRepos": "https://cran.rstudio.com",
+      "RemoteSha": "1.1.4",
+      "Hash": "2a78bf0825e0088e117520553ceb7fa5"
+    },
+    "here": {
+      "Package": "here",
+      "Version": "0.1",
+      "Source": "CRAN",
+      "RemoteType": "standard",
+      "RemoteRef": "here",
+      "RemoteRepos": "https://cran.rstudio.com",
+      "RemoteSha": "0.1",
+      "Hash": "fabf4a569e93a85dc38c252a5026eb50"
+    },
+    "rprojroot": {
+      "Package": "rprojroot",
+      "Version": "1.3-2",
+      "Source": "CRAN",
+      "RemoteType": "standard",
+      "RemoteRef": "rprojroot",
+      "RemoteRepos": "https://cran.rstudio.com",
+      "RemoteSha": "1.3-2",
+      "Hash": "aabecf1380683e49f6da7f3d7a3e69d2"
+    }
+  }
+}
