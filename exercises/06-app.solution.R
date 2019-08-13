@@ -3,6 +3,7 @@ library(ggplot2)
 library(rlang)
 library(shiny)
 library(shinymeta)
+library(shinyAce)
 
 # Identify the file we're going to load, relative to project root
 filepath <- "safety_data.csv"
@@ -17,8 +18,12 @@ ui <- fluidPage(
       uiOutput("column_ui")
     ),
     mainPanel(
-      verbatimTextOutput("summary"),
-      plotOutput("histogram")
+      outputCodeButton(
+        verbatimTextOutput("summary")
+      ),
+      outputCodeButton(
+        plotOutput("histogram")
+      )
     )
   ),
   sidebarLayout(
@@ -26,24 +31,28 @@ ui <- fluidPage(
       uiOutput("column2_ui")
     ),
     mainPanel(
-      plotOutput("scatter"),
-      h3(
-        strong("Correlation: "),
-        textOutput("cor", inline = TRUE)
+      outputCodeButton(
+        plotOutput("scatter")
+      ),
+      outputCodeButton(
+        h3(
+          strong("Correlation: "),
+          textOutput("cor", inline = TRUE)
+        )
       )
     )
   )
 )
 
 server <- function(input, output, session) {
-  column <- metaReactive({
+  column <- metaReactive2({
     req(input$column)
-    input$column
+    metaExpr(..(input$column))
   })
   
-  column2 <- metaReactive({
+  column2 <- metaReactive2({
     req(input$column2)
-    input$column2
+    metaExpr(..(input$column2))
   })
   
   output$column_ui <- renderUI({
@@ -60,37 +69,52 @@ server <- function(input, output, session) {
   
   output$summary <- metaRender(renderPrint, {
     # Print a basic summary
-    summary(safety[[column()]])
+    summary(safety[[..(column())]])
   })
   
   output$histogram <- metaRender(renderPlot, {
     # Plot a histogram of the column in question
-    ggplot(safety, aes(!!sym(column()), fill = Class)) +
+    ggplot(safety, aes(!!sym(..(column())), fill = Class)) +
       geom_histogram(bins = 30) +
       facet_wrap(~Class) +
-      ggtitle(column())
+      ggtitle(..(column()))
   })
   
   output$scatter <- metaRender(renderPlot, {
     # Plot a scatter plot of column vs. column2
-    ggplot(safety, aes(!!sym(column()), !!sym(column2()), color = Class)) +
+    ggplot(safety, aes(!!sym(..(column())), !!sym(..(column2())), color = Class)) +
       geom_point(size = 3, alpha = 0.5) +
       geom_smooth(se = FALSE) +
-      ggtitle(paste(column(), "/", column2()))
+      ggtitle(paste(..(column()), "/", ..(column2())))
   })
   
   output$cor <- metaRender(renderText, {
     # Calculate correlation
-    cor(safety[[column()]], safety[[column2()]], use = "complete.obs")
+    cor(safety[[..(column())]], safety[[..(column2())]], use = "complete.obs")
+  })
+
+  observeEvent(input$summary_output_code, {
+    displayCodeModal(
+      expandChain(output$summary())
+    )
+  })
+
+  observeEvent(input$histogram_output_code, {
+    displayCodeModal(
+      expandChain(output$histogram())
+    )
+  })
+
+  observeEvent(input$scatter_output_code, {
+    displayCodeModal(
+      expandChain(output$scatter())
+    )
   })
   
-  observe({
-    print(expandChain(
-      output$summary(),
-      output$histogram(),
-      output$scatter(),
-      output$cor()
-    ))
+  observeEvent(input$cor_output_code, {
+    displayCodeModal(
+      expandChain(output$cor())
+    )
   })
 }
 

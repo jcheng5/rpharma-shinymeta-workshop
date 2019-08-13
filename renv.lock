@@ -3,7 +3,7 @@
     "Version": "0.6.0-92"
   },
   "R": {
-    "Version": "3.6.1",
+    "Version": "3.6.0",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -50,7 +50,7 @@
       "RemoteRef": "callr",
       "RemoteRepos": "https://cran.rstudio.com",
       "RemoteSha": "3.3.1",
-      "Hash": "7eaa60cdcf2796a7bb6086c3923983ef"
+      "Hash": "b9788f81c78e3187d199c4057872fe06"
     },
     "cli": {
       "Package": "cli",
@@ -60,7 +60,7 @@
       "RemoteRef": "cli",
       "RemoteRepos": "https://cran.rstudio.com",
       "RemoteSha": "1.1.0",
-      "Hash": "ca8cae9892a09cc014898470df415add"
+      "Hash": "9b3dc7798f53ba3050b41ce4a3febdc5"
     },
     "clipr": {
       "Package": "clipr",
@@ -90,7 +90,7 @@
       "RemoteRef": "crayon",
       "RemoteRepos": "https://cran.rstudio.com",
       "RemoteSha": "1.3.4",
-      "Hash": "3fa6f9cda30a77d5d0e3b1edb1fcf949"
+      "Hash": "d308ead32010b8e4d76c4690427da50b"
     },
     "digest": {
       "Package": "digest",
@@ -180,7 +180,7 @@
       "RemoteRef": "here",
       "RemoteRepos": "https://cran.rstudio.com",
       "RemoteSha": "0.1",
-      "Hash": "fabf4a569e93a85dc38c252a5026eb50"
+      "Hash": "17102304d55b3242d6199cddc0fd79f7"
     },
     "hms": {
       "Package": "hms",
@@ -190,7 +190,7 @@
       "RemoteRef": "hms",
       "RemoteRepos": "https://cran.rstudio.com",
       "RemoteSha": "0.5.0",
-      "Hash": "6a5c9d1afbb5ddec302cf38b1b69f0e0"
+      "Hash": "092e5b11e8fb83b420b1a192ab095263"
     },
     "htmltools": {
       "Package": "htmltools",
@@ -290,7 +290,7 @@
       "RemoteRef": "Matrix",
       "RemoteRepos": "https://cran.rstudio.com",
       "RemoteSha": "1.2-17",
-      "Hash": "62a0a8a6af8cdc0a32e5a69fb03ebfe9"
+      "Hash": "a60009c832f495604f54399f21d89cc8"
     },
     "mgcv": {
       "Package": "mgcv",
@@ -330,7 +330,7 @@
       "RemoteRef": "nlme",
       "RemoteRepos": "https://cran.rstudio.com",
       "RemoteSha": "3.1-141",
-      "Hash": "aca0161699786023f0348b52d38845f7"
+      "Hash": "be8db89838a17117a4083e72350443e0"
     },
     "pillar": {
       "Package": "pillar",
@@ -340,7 +340,7 @@
       "RemoteRef": "pillar",
       "RemoteRepos": "https://cran.rstudio.com",
       "RemoteSha": "1.4.2",
-      "Hash": "0d937881016388e1be671cbaad19ab8d"
+      "Hash": "57645ff795277554eee14df5bcee8025"
     },
     "pkgconfig": {
       "Package": "pkgconfig",
@@ -350,7 +350,7 @@
       "RemoteRef": "pkgconfig",
       "RemoteRepos": "https://cran.rstudio.com",
       "RemoteSha": "2.0.2",
-      "Hash": "a9c3905822c12b8ad5f5bef850d1b45b"
+      "Hash": "2dd2d8867e4f0173ea2ce029d630a086"
     },
     "plyr": {
       "Package": "plyr",
@@ -362,6 +362,16 @@
       "RemoteSha": "1.8.4",
       "Hash": "37dd0f3aadee2ac99e47168f4bffddb7"
     },
+    "prettycode": {
+      "Package": "prettycode",
+      "Version": "1.0.2",
+      "Source": "CRAN",
+      "RemoteType": "standard",
+      "RemoteRef": "prettycode",
+      "RemoteRepos": "https://cran.rstudio.com",
+      "RemoteSha": "1.0.2",
+      "Hash": "5ac78616542b97e7347d67e7a5cf4548"
+    },
     "processx": {
       "Package": "processx",
       "Version": "3.4.1",
@@ -370,7 +380,7 @@
       "RemoteRef": "processx",
       "RemoteRepos": "https://cran.rstudio.com",
       "RemoteSha": "3.4.1",
-      "Hash": "309fb790fba15256ebf768025461c4b7"
+      "Hash": "fec9b1a798e49d0609702929706a1dfc"
     },
     "promises": {
       "Package": "promises",
@@ -390,7 +400,7 @@
       "RemoteRef": "ps",
       "RemoteRepos": "https://cran.rstudio.com",
       "RemoteSha": "1.3.0",
-      "Hash": "860db981f5cf335ade748deb91d3eb34"
+      "Hash": "a38f3fd447d1595a3da538910054b911"
     },
     "purrr": {
       "Package": "purrr",
@@ -440,7 +450,7 @@
       "RemoteRef": "readr",
       "RemoteRepos": "https://cran.rstudio.com",
       "RemoteSha": "1.3.1",
-      "Hash": "12e12ae34178a19170de85d7eff9dc67"
+      "Hash": "60167b7ec3de99e76ff406aaf0f83bb4"
     },
     "rematch2": {
       "Package": "rematch2",
@@ -450,7 +460,7 @@
       "RemoteRef": "rematch2",
       "RemoteRepos": "https://cran.rstudio.com",
       "RemoteSha": "2.1.0",
-      "Hash": "c760f7e1c4faa8a95204fd574e69651f"
+      "Hash": "0f9d491406a99401fdbfd8e8234cf1aa"
     },
     "reshape2": {
       "Package": "reshape2",
@@ -480,7 +490,7 @@
       "RemoteRef": "rprojroot",
       "RemoteRepos": "https://cran.rstudio.com",
       "RemoteSha": "1.3-2",
-      "Hash": "aabecf1380683e49f6da7f3d7a3e69d2"
+      "Hash": "5382761b8b318da6dd3fb0f6dae3c43a"
     },
     "scales": {
       "Package": "scales",
@@ -503,6 +513,16 @@
       "RemoteRef": "master",
       "RemoteSha": "4c0af8b1c001b05b6878aa12fa087bcc5715285d",
       "Hash": "d975dba6c5038adeb085fe2c2a9bb565"
+    },
+    "shinyAce": {
+      "Package": "shinyAce",
+      "Version": "0.4.0",
+      "Source": "CRAN",
+      "RemoteType": "standard",
+      "RemoteRef": "shinyAce",
+      "RemoteRepos": "https://cran.rstudio.com",
+      "RemoteSha": "0.4.0",
+      "Hash": "ecd757f09253472aa9f1a3bc088c0026"
     },
     "shinymeta": {
       "Package": "shinymeta",
@@ -554,7 +574,7 @@
       "RemoteRef": "styler",
       "RemoteRepos": "https://cran.rstudio.com",
       "RemoteSha": "1.1.1",
-      "Hash": "fdcfe1ac9dd9506d91d1047864cead71"
+      "Hash": "6e523f805ed3a1579acb1935692cd468"
     },
     "tibble": {
       "Package": "tibble",
@@ -564,7 +584,7 @@
       "RemoteRef": "tibble",
       "RemoteRepos": "https://cran.rstudio.com",
       "RemoteSha": "2.1.3",
-      "Hash": "24e7de5ff617b10ae7455b81131b5a54"
+      "Hash": "a8d41bd284e21ab7e776d228dc5bac91"
     },
     "utf8": {
       "Package": "utf8",
@@ -594,7 +614,7 @@
       "RemoteRef": "viridisLite",
       "RemoteRepos": "https://cran.rstudio.com",
       "RemoteSha": "0.3.0",
-      "Hash": "9cdc281be942ca5c7ed232951f7cd001"
+      "Hash": "1f264fa42320c4f44b1689d89101e823"
     },
     "withr": {
       "Package": "withr",
@@ -604,7 +624,7 @@
       "RemoteRef": "withr",
       "RemoteRepos": "https://cran.rstudio.com",
       "RemoteSha": "2.1.2",
-      "Hash": "437dd637b5e75520a5d93c24f5bc0b17"
+      "Hash": "7c9aef08038f47e6c1532ed574a0e087"
     },
     "xfun": {
       "Package": "xfun",

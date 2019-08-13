@@ -2,6 +2,7 @@ library(readr)
 library(ggplot2)
 library(rlang)
 library(shiny)
+library(shinymeta)
 
 # Identify the file we're going to load, relative to project root
 filepath <- "safety_data.csv"
@@ -81,6 +82,15 @@ server <- function(input, output, session) {
   output$cor <- renderText({
     # Calculate correlation
     cor(safety[[column()]], safety[[column2()]], use = "complete.obs")
+  })
+  
+  observe({
+    print(expandChain(
+      output$summary(),
+      output$histogram(),
+      output$scatter(),
+      output$cor()
+    ))
   })
 }
 

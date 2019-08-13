@@ -59,28 +59,22 @@ server <- function(input, output, session) {
   
   output$summary <- renderPrint({
     # Print a basic summary
-    summary(safety[[column()]])
+    # TODO
   })
   
   output$histogram <- renderPlot({
     # Plot a histogram of the column in question
-    ggplot(safety, aes(!!sym(column()), fill = Class)) +
-      geom_histogram(bins = 30) +
-      facet_wrap(~Class) +
-      ggtitle(column())
+    # TODO
   })
   
   output$scatter <- renderPlot({
     # Plot a scatter plot of column vs. column2
-    ggplot(safety, aes(!!sym(column()), !!sym(column2()), color = Class)) +
-      geom_point(size = 3, alpha = 0.5) +
-      geom_smooth(se = FALSE) +
-      ggtitle(paste(column(), "/", column2()))
+    # TODO
   })
   
   output$cor <- renderText({
     # Calculate correlation
-    cor(safety[[column()]], safety[[column2()]], use = "complete.obs")
+    # TODO
   })
 }
 
