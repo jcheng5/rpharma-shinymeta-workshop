@@ -1,0 +1,14 @@
+---
+title: "Report title"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This report summarizes the {{column}} data from {{filepath}}.
+
+```{r}
+{{code}}
+```
