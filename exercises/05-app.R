@@ -86,6 +86,18 @@ server <- function(input, output, session) {
   
   observe({
     print(expandChain(
+      # Sorry about the duplicated code, metaAction is coming soon!
+      quote({
+        library(readr)
+        library(ggplot2)
+        library(rlang)
+        
+        # Identify the file we're going to load, relative to project root
+        filepath <- "safety_data.csv"
+        
+        # Load CSV data
+        safety <- read_csv(filepath, comment = "#")
+      }),
       output$summary(),
       output$histogram(),
       output$scatter(),

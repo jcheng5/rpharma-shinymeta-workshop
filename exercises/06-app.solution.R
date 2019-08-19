@@ -1,16 +1,20 @@
-library(readr)
-library(ggplot2)
-library(rlang)
 library(shiny)
 library(shinymeta)
 library(shinyAce)
 
-# Identify the file we're going to load, relative to project root
-filepath <- "safety_data.csv"
-
-# Load CSV data
-safety <- read_csv(filepath, comment = "#")
-
+# Sorry about this, metaAction is coming soon!
+setup_code <- quote({
+  library(readr)
+  library(ggplot2)
+  library(rlang)
+  
+  # Identify the file we're going to load, relative to project root
+  filepath <- "safety_data.csv"
+  
+  # Load CSV data
+  safety <- read_csv(filepath, comment = "#")
+})
+eval(setup_code)
 
 ui <- fluidPage(
   sidebarLayout(
@@ -95,25 +99,25 @@ server <- function(input, output, session) {
 
   observeEvent(input$summary_output_code, {
     displayCodeModal(
-      expandChain(output$summary())
+      expandChain(setup_code, output$summary())
     )
   })
 
   observeEvent(input$histogram_output_code, {
     displayCodeModal(
-      expandChain(output$histogram())
+      expandChain(setup_code, output$histogram())
     )
   })
 
   observeEvent(input$scatter_output_code, {
     displayCodeModal(
-      expandChain(output$scatter())
+      expandChain(setup_code, output$scatter())
     )
   })
   
   observeEvent(input$cor_output_code, {
     displayCodeModal(
-      expandChain(output$cor())
+      expandChain(setup_code, output$cor())
     )
   })
 }

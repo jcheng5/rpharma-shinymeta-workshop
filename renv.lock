@@ -32,6 +32,12 @@
       "RemoteSha": "1.1.4",
       "Hash": "2a78bf0825e0088e117520553ceb7fa5"
     },
+    "base64enc": {
+      "Package": "base64enc",
+      "Version": "0.1-3",
+      "Source": "CRAN",
+      "Hash": "d355963b4b1c3039bfe8d65611a11cca"
+    },
     "BH": {
       "Package": "BH",
       "Version": "1.69.0-1",
@@ -112,6 +118,12 @@
       "RemoteSha": "0.2.0.1",
       "Hash": "a7a9b2ae023bf012744c480d3388c0c8"
     },
+    "evaluate": {
+      "Package": "evaluate",
+      "Version": "0.14",
+      "Source": "CRAN",
+      "Hash": "5a6c1949963e0785dbcbb0556337d61e"
+    },
     "fansi": {
       "Package": "fansi",
       "Version": "0.4.0",
@@ -182,6 +194,12 @@
       "RemoteSha": "0.1",
       "Hash": "17102304d55b3242d6199cddc0fd79f7"
     },
+    "highr": {
+      "Package": "highr",
+      "Version": "0.8",
+      "Source": "CRAN",
+      "Hash": "43e36bc8bca1d8256f86933659c46349"
+    },
     "hms": {
       "Package": "hms",
       "Version": "0.5.0",
@@ -221,6 +239,12 @@
       "RemoteRepos": "https://cran.rstudio.com",
       "RemoteSha": "1.6",
       "Hash": "b7e67b6a7bc2fdae729c0f3ff9026a8a"
+    },
+    "knitr": {
+      "Package": "knitr",
+      "Version": "1.24",
+      "Source": "CRAN",
+      "Hash": "4d5213d0ec43d3ef3415177faa434602"
     },
     "labeling": {
       "Package": "labeling",
@@ -271,6 +295,12 @@
       "RemoteRepos": "https://cran.rstudio.com",
       "RemoteSha": "1.5",
       "Hash": "dee1d97cffddfd3ed969e224bd0826d0"
+    },
+    "markdown": {
+      "Package": "markdown",
+      "Version": "1.1",
+      "Source": "CRAN",
+      "Hash": "80e1f73841614fa35f82a85d66fb41da"
     },
     "MASS": {
       "Package": "MASS",
@@ -482,6 +512,12 @@
       "RemoteSha": "0.4.0",
       "Hash": "8f1bf3a54c8844dc254baabba61cb6a9"
     },
+    "rmarkdown": {
+      "Package": "rmarkdown",
+      "Version": "1.14",
+      "Source": "CRAN",
+      "Hash": "b712ba012c5d17214b872a47f40a611e"
+    },
     "rprojroot": {
       "Package": "rprojroot",
       "Version": "1.3-2",
@@ -533,8 +569,8 @@
       "RemoteUsername": "rstudio",
       "RemoteRepo": "shinymeta",
       "RemoteRef": "master",
-      "RemoteSha": "9267a37df45d2fe27821b56ca1e1ae4687cd4508",
-      "Hash": "1cf5ed0dce75816a09b851b9a0921428"
+      "RemoteSha": "3b45281d6c5471d01f57afbab5dffa845c37bbe8",
+      "Hash": "4ccee8f6d6badbed04fa97e66ffb5de5"
     },
     "sourcetools": {
       "Package": "sourcetools",
@@ -645,6 +681,12 @@
       "RemoteRepos": "https://cran.rstudio.com",
       "RemoteSha": "1.8-4",
       "Hash": "48f60fcc0974ce72870076d48038df2d"
+    },
+    "yaml": {
+      "Package": "yaml",
+      "Version": "2.2.0",
+      "Source": "CRAN",
+      "Hash": "3a313c96061c4ac790de611dc57ebd1f"
     },
     "zeallot": {
       "Package": "zeallot",
