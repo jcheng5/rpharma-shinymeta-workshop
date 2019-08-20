@@ -1,0 +1,31 @@
+---
+title: "Report title"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+First we load the data:
+
+```{r message=FALSE}
+{{code_load}}
+```
+
+<!-- The `deparse()` is a workaround to safely include untrusted content; see issue #73 -->
+## Summary and histogram of {{deparse(column)}}
+
+Some things you might like to know about {{deparse(column)}}:
+
+```{r}
+{{code1}}
+```
+
+## Scatter and correlation of {{deparse(column)}} vs {{deparse(column2)}}
+
+And in comparison to {{deparse(column2)}}:
+
+```{r}
+{{code2}}
+```

@@ -1,10 +1,8 @@
-library(readr)
-library(ggplot2)
-library(rlang)
 library(shiny)
 library(shinymeta)
 library(shinyAce)
 
+# Sorry about this, metaAction is coming soon!
 setup_code <- quote({
   library(readr)
   library(ggplot2)
@@ -24,7 +22,9 @@ ui <- fluidPage(
       uiOutput("column_ui")
     ),
     mainPanel(
-      verbatimTextOutput("summary"),
+      outputCodeButton(
+        verbatimTextOutput("summary")
+      ),
       plotOutput("histogram")
     )
   ),
@@ -39,9 +39,6 @@ ui <- fluidPage(
         textOutput("cor", inline = TRUE)
       )
     )
-  ),
-  fixedPanel(bottom = 12, right = 12, style = "z-index: 1000;",
-    downloadButton("downloadReport", "Download report")
   )
 )
 
@@ -94,23 +91,14 @@ server <- function(input, output, session) {
     cor(safety[[..(column())]], safety[[..(column2())]], use = "complete.obs")
   })
 
-  output$downloadReport <- downloadHandler("report.zip",
-    function(file) {
-      code <- expandChain(
+  observeEvent(input$summary_output_code, {
+    displayCodeModal(
+      expandChain(
         setup_code,
-        output$summary(),
-        output$histogram(),
-        output$scatter(),
-        output$cor()
+        output$summary()
       )
-      
-      buildRmdBundle("07-report.Rmd", file, vars = list(
-        code = code,
-        column = column(),
-        filepath = filepath
-      ), include_files = filepath)
-    }
-  )
+    )
+  })
 }
 
 shinyApp(ui, server)

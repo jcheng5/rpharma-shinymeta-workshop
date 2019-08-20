@@ -8,10 +8,10 @@ setup_code <- quote({
   library(ggplot2)
   library(rlang)
   
-  # Identify the file we're going to load, relative to project root
+  "# Identify the file we're going to load, relative to project root"
   filepath <- "safety_data.csv"
   
-  # Load CSV data
+  "# Load CSV data"
   safety <- read_csv(filepath, comment = "#")
 })
 eval(setup_code)
@@ -72,12 +72,12 @@ server <- function(input, output, session) {
   })
   
   output$summary <- metaRender(renderPrint, {
-    # Print a basic summary
+    "# Print a basic summary"
     summary(safety[[..(column())]])
   })
   
   output$histogram <- metaRender(renderPlot, {
-    # Plot a histogram of the column in question
+    "# Plot a histogram of the column in question"
     ggplot(safety, aes(!!sym(..(column())), fill = Class)) +
       geom_histogram(bins = 30) +
       facet_wrap(~Class) +
@@ -85,7 +85,7 @@ server <- function(input, output, session) {
   })
   
   output$scatter <- metaRender(renderPlot, {
-    # Plot a scatter plot of column vs. column2
+    "# Plot a scatter plot of column vs. column2"
     ggplot(safety, aes(!!sym(..(column())), !!sym(..(column2())), color = Class)) +
       geom_point(size = 3, alpha = 0.5) +
       geom_smooth(se = FALSE) +
@@ -93,7 +93,7 @@ server <- function(input, output, session) {
   })
   
   output$cor <- metaRender(renderText, {
-    # Calculate correlation
+    "# Calculate correlation"
     cor(safety[[..(column())]], safety[[..(column2())]], use = "complete.obs")
   })
 

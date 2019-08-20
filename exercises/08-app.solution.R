@@ -96,17 +96,31 @@ server <- function(input, output, session) {
 
   output$downloadReport <- downloadHandler("report.zip",
     function(file) {
-      code <- expandChain(
-        setup_code,
+      
+      # We use an expansionContext object to ensure multiple calls to
+      # expandChain() don't cause code duplication (i.e. meta-reactive
+      # objects that are depended on by both expandChains)
+      ectx <- newExpansionContext()
+      
+      code_load <- expandChain(.expansionContext = ectx,
+        setup_code
+      )
+      
+      code1 <- expandChain(.expansionContext = ectx,
         output$summary(),
-        output$histogram(),
+        output$histogram()
+      )
+      code2 <- expandChain(.expansionContext = ectx,
         output$scatter(),
         output$cor()
       )
       
-      buildRmdBundle("07-report.Rmd", file, vars = list(
-        code = code,
+      buildRmdBundle("08-report.Rmd", file, vars = list(
+        code_load = code_load,
+        code1 = code1,
+        code2 = code2,
         column = column(),
+        column2 = column2(),
         filepath = filepath
       ), include_files = filepath)
     }

@@ -7,8 +7,9 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-This report summarizes the {{column}} data from {{filepath}}.
+<!-- The `deparse()` is a workaround to safely include untrusted content; see issue #73 -->
+This report summarizes the {{deparse(column)}} data from {{filepath}}.
 
-```{r}
+```{r message=FALSE}
 {{code}}
 ```

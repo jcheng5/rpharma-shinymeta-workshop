@@ -94,8 +94,9 @@ server <- function(input, output, session) {
     cor(safety[[..(column())]], safety[[..(column2())]], use = "complete.obs")
   })
 
-  output$downloadReport <- downloadHandler("report.zip",
-    function(file) {
+  output$downloadReport <- downloadHandler(
+    filename = "report.zip",
+    content = function(file) {
       code <- expandChain(
         setup_code,
         output$summary(),
@@ -104,11 +105,7 @@ server <- function(input, output, session) {
         output$cor()
       )
       
-      buildRmdBundle("07-report.Rmd", file, vars = list(
-        code = code,
-        column = column(),
-        filepath = filepath
-      ), include_files = filepath)
+      # TODO: Implement report
     }
   )
 }
